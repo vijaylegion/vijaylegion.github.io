@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Professional portfolio and business website template — clean, responsive, and accessible." />
+  <title>Your Name — Professional Website</title>
+
+  <!-- SEO / Social -->
+  <meta property="og:title" content="Your Name — Professional Website" />
+  <meta property="og:description" content="Clean, responsive, and accessible professional website template." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Minimal reset & design tokens -->
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#3b82f6;
+      --white:#e6eef8;
+      --radius:12px;
+      --max-width:1100px;
+      --shadow: 0 6px 24px rgba(2,6,23,0.6);
+      --glass: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,#071028 0%, #071423 55%), var(--bg);
+      color:var(--white);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+
+    .container{
+      width:clamp(300px, 92%, var(--max-width));
+      margin:0 auto;
+      padding:48px 0;
+    }
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:1rem;
+      padding:12px 0;
+    }
+
+    .brand{display:flex;align-items:center;gap:.75rem;font-weight:700}
+    .logo{
+      width:44px;height:44px;border-radius:10px;background:var(--accent);
+      display:inline-grid;place-items:center;font-weight:700;color:white;
+      box-shadow:0 6px 18px rgba(59,130,246,0.18);
+    }
+
+    nav{display:flex;gap:14px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;font-size:0.95rem}
+    nav a:hover{color:var(--white)}
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 420px;
+      gap:32px;
+      align-items:center;
+      margin-top:28px;
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(255,255,255,0.03);
+    }
+
+    h1{font-size:clamp(1.6rem, 3.8vw, 2.4rem);margin:0 0 8px}
+    p.lead{color:var(--muted);margin:0 0 18px}
+
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;
+      text-decoration:none;font-weight:600;font-size:0.95rem;border:1px solid transparent;
+    }
+    .btn-primary{background:var(--accent);color:white;box-shadow:0 8px 28px rgba(59,130,246,0.18)}
+    .btn-outline{background:transparent;color:var(--white);border-color:rgba(255,255,255,0.06)}
+
+    /* Services & portfolio */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+      margin-top:22px;
+    }
+    .service{padding:18px;border-radius:10px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
+    .service h3{margin:0 0 6px;font-size:1rem}
+    .service p{margin:0;color:var(--muted);font-size:.92rem}
+
+    .portfolio{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+      margin-top:18px;
+    }
+    .work{
+      border-radius:10px;overflow:hidden;min-height:120px;background:linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+      padding:14px;border:1px solid rgba(255,255,255,0.03);
+    }
+    .work h4{margin:0 0 6px}
+    .muted{color:var(--muted);font-size:.95rem}
+
+    /* Contact */
+    form{display:grid;gap:10px}
+    input,textarea{
+      width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);
+      background:rgba(255,255,255,0.02);color:var(--white);outline:none;font-size:.95rem;
+    }
+    textarea{min-height:120px;resize:vertical}
+    footer{margin-top:36px;padding:18px 0;color:var(--muted);font-size:.9rem;text-align:center}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .portfolio{grid-template-columns:1fr}
+    }
+    @media (max-width:560px){
+      .grid{grid-template-columns:1fr}
+      nav{display:none}
+      .container{padding:28px 0}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">Y</div>
+        <div>
+          <div style="font-size:.95rem">Your Name</div>
+          <div class="muted" style="font-size:.78rem">Designer • Developer • Consultant</div>
+        </div>
+      </div>
+
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="intro">
+        <div class="card" id="intro">
+          <h1>Crafting clear, fast, and modern web experiences</h1>
+          <p class="lead">I build professional websites and digital products for companies and creators — focusing on performance, accessibility, and measurable results.</p>
+
+          <div class="cta-row" role="group" aria-label="Primary actions">
+            <a class="btn btn-primary" href="#contact">Hire me</a>
+            <a class="btn btn-outline" href="#work">See portfolio</a>
+          </div>
+
+          <!-- Key stats -->
+          <div style="display:flex;gap:10px;margin-top:18px">
+            <div style="padding:10px;background:rgba(255,255,255,0.02);border-radius:8px;text-align:center;min-width:90px">
+              <div style="font-weight:700">8+</div>
+              <div class="muted">Years</div>
+            </div>
+            <div style="padding:10px;background:rgba(255,255,255,0.02);border-radius:8px;text-align:center;min-width:90px">
+              <div style="font-weight:700">120+</div>
+              <div class="muted">Projects</div>
+            </div>
+            <div style="padding:10px;background:rgba(255,255,255,0.02);border-radius:8px;text-align:center;min-width:90px">
+              <div style="font-weight:700">95%</div>
+              <div class="muted">Satisfaction</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact card / quick info -->
+        <aside class="card" aria-labelledby="contact-card">
+          <h3 id="contact-card">Quick contact</h3>
+          <p class="muted">Ready to start your project? Tell me about your goals and timeline — I'll reply within 48 hours.</p>
+
+          <dl style="margin-top:12px">
+            <dt class="muted" style="font-size:.85rem">Email</dt>
+            <dd style="margin:4px 0 12px"><a href="mailto:hello@example.com" style="color:var(--accent);text-decoration:none">hello@example.com</a></dd>
+
+            <dt class="muted" style="font-size:.85rem">Location</dt>
+            <dd style="margin:4px 0 12px">Remote — available worldwide</dd>
+          </dl>
+
+          <div style="display:flex;gap:8px;margin-top:12px">
+            <a class="btn btn-outline" href="#contact">Message</a>
+            <a class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.05);color:var(--muted)" href="#work">Resume</a>
+          </div>
+        </aside>
+      </section>
+
+      <!-- Services -->
+      <section id="services" style="margin-top:28px">
+        <div style="display:flex;justify-content:space-between;align-items:end;gap:12px">
+          <h2 style="margin:0">Services</h2>
+          <p class="muted" style="margin:0">Tailored services to move your business forward.</p>
+        </div>
+
+        <div class="grid" style="margin-top:14px">
+          <div class="service">
+            <h3>Web Design & UI</h3>
+            <p>Create clear visual systems and hi-fi prototypes that turn visitors into customers.</p>
+          </div>
+          <div class="service">
+            <h3>Frontend Development</h3>
+            <p>Performance-first, accessible, and maintainable code using modern frameworks or plain HTML/CSS/JS.</p>
+          </div>
+          <div class="service">
+            <h3>Consulting & Strategy</h3>
+            <p>Product strategy, audits, and roadmaps to align your web product with business outcomes.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio -->
+      <section id="work" style="margin-top:28px">
+        <h2 style="margin:0 0 10px">Selected Work</h2>
+        <p class="muted" style="margin:0 0 12px">Recent projects with measurable impact.</p>
+
+        <div class="portfolio">
+          <article class="work">
+            <h4>Project Alpha</h4>
+            <div class="muted">E-commerce redesign — +35% conversion</div>
+            <p class="muted" style="margin-top:8px">Performance improvements, A/B testing, and a rebuilt checkout flow.</p>
+          </article>
+
+          <article class="work">
+            <h4>Brand Site Beta</h4>
+            <div class="muted">Corporate site — SEO & accessibility</div>
+            <p class="muted" style="margin-top:8px">Semantic markup, structured data, and an editorial CMS integration.</p>
+          </article>
+
+          <article class="work">
+            <h4>Dashboard Gamma</h4>
+            <div class="muted">SaaS admin dashboard</div>
+            <p class="muted" style="margin-top:8px">Component library, realtime updates, and granular permissions.</p>
+          </article>
+
+          <article class="work">
+            <h4>Landing Delta</h4>
+            <div class="muted">Product launch landing page</div>
+            <p class="muted" style="margin-top:8px">Fast-loading, analytics-driven campaigns with strong CTA focus.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" style="margin-top:28px">
+        <h2>Get in touch</h2>
+        <p class="muted" style="margin:0 0 12px">Quick message — I'll get back within 48 hours.</p>
+
+        <div class="card" style="margin-top:12px">
+          <form action="#" method="post" aria-label="Contact form">
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="email" name="email" placeholder="Your email" required />
+            <input type="text" name="subject" placeholder="Subject" />
+            <textarea name="message" placeholder="Tell me about your project..." required></textarea>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px">
+              <small class="muted">Or email: <a href="mailto:hello@example.com" style="color:var(--accent)">hello@example.com</a></small>
+              <button type="submit" class="btn btn-primary">Send message</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> Your Name — Built with clarity & performance.</div>
+      <script>
+        // Insert the current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+        // Note: If you plan to deploy, replace contact form action with a real endpoint or use a service (Formspree, Netlify forms, etc.)
+      </script>
+    </footer>
+  </div>
+</body>
+</html>

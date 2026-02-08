@@ -290,5 +290,15 @@
   </div>
   <!-- <script src="https://my.hellobar.com/a9194013b0f73a038a236c20dce0bb768ea82579.js" type="text/javascript" charset="utf-8" async="async"> </script> --> <!-- prod -->
   <script src="https://my.hellobar.com/f3bdd885bbbc696dfff81314b511ec62c54cbe49.js" type="text/javascript" charset="utf-8" async="async"> </script> <!-- edge -->
+  <script>
+(function(w,d,s,id){
+  var f=d.getElementsByTagName(s)[0];
+  if(d.getElementById(id))return;
+  var js=d.createElement(s);
+  js.id=id;js.async=1;
+  js.src='http://localhost:5174/src/main.tsx?site=ea5ab1da30dc51f04c51e350';
+  f.parentNode.insertBefore(js,f);
+})(window,document,'script','popup-widget');
+</script>
 </body>
 </html>

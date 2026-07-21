@@ -290,8 +290,22 @@
     </footer>
   </div>
 
-<script type="text/javascript">var subscribersSiteId='8ba083b5-c697-4759-994a-49a73dd3128b';</script>
-<script type="text/javascript" src="https://cdn.subscribersdemo.com/assets/subscribers.js"></script>
- 
+<script>
+(function(w, d) {
+  w.PushEngage = w.PushEngage || [];
+  w._peq = w._peq || [];
+  PushEngage.push(['init', {
+      appId: 'edf49738-433c-42db-84ac-87d62e2fc232'
+  }]);
+
+  var e = d.createElement('script');
+
+  e.src = 'https://clientcdn.pushengage.com/sdks/pushengage-web-sdk.js';
+  e.async = true;
+  e.type = 'text/javascript';
+  d.head.appendChild(e);
+})(window, document);
+</script>
+
 </body>
 </html>
